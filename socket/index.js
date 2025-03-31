@@ -1,5 +1,7 @@
 import { Server } from "socket.io"
-import { GAME_STATE_INIT, WEBSOCKET_SERVER_PORT } from "../config.mjs"
+import { GAME_STATE_INIT } from "../config.mjs"
+const PORT = process.env.PORT || WEBSOCKET_SERVER_PORT
+
 import Manager from "./roles/manager.js"
 import Player from "./roles/player.js"
 import { abortCooldown } from "./utils/cooldown.js"
@@ -71,3 +73,4 @@ io.on("connection", (socket) => {
     }
   })
 })
+io.listen(PORT)
