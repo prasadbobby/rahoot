@@ -1,8 +1,8 @@
-export const WEBSOCKET_PUBLIC_URL = "http://localhost:5505/"
-export const WEBSOCKET_SERVER_PORT = 5505
+export const WEBSOCKET_PUBLIC_URL = process.env.NEXT_PUBLIC_WEBSOCKET_URL || "http://localhost:5505/"
+export const WEBSOCKET_SERVER_PORT = process.env.PORT || 5505
 
 const QUIZZ_CONFIG = {
-  password: "PASSWORD",
+  password: process.env.MANAGER_PASSWORD || "PASSWORD",
   subject: "Adobe",
   questions: [
     {
